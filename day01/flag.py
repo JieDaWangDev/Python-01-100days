@@ -11,8 +11,6 @@ import turtle
 '''
 绘制背景
 '''
-
-
 def draw_rect(x, y, width, height):
     turtle.goto(x, y)
     turtle.pencolor('red')
@@ -25,10 +23,13 @@ def draw_rect(x, y, width, height):
         turtle.right(90)
     turtle.end_fill()
 
-
+'''
+绘制星星
+'''
 def draw_star(x, y, radius):
     turtle.setpos(x, y)
     pos1 = turtle.pos()
+    #半径，弧度
     turtle.circle(-radius, 72)
     pos2 = turtle.pos()
     turtle.circle(-radius, 72)
