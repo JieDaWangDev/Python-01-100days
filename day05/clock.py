@@ -15,9 +15,15 @@ from datetime import datetime
 class Clock(object):
 
     def __init__(self, h, m, s):
+        print("__init__")
         self._h = h
         self._m = m
         self._s = s
+
+    @classmethod #类方法
+    def now(cls):
+        return cls(datetime.now().hour, datetime.now().minute, \
+                   datetime.now().second)
 
     def run(self):
         self._s += 1
@@ -36,10 +42,10 @@ class Clock(object):
 
 
 if __name__ == "__main__":
-    hour = datetime.now().hour
-    min = datetime.now().minute
-    sec = datetime.now().second
-    c = Clock(hour, min, sec);
+    # hour = datetime.now().hour
+    # min = datetime.now().minute
+    # sec = datetime.now().second
+    c = Clock.now();
 
     while True:
         os.system("cls")
